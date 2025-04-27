@@ -85,6 +85,17 @@ Le script installera automatiquement les dépendances nécessaires si elles ne s
 - Puissance configurable et ajustable jusqu'à 22 dBm.
 - Teste la résistance des appareils mobiles aux faux messages systèmes.
 
+### V4-fzf - Fake GSM Cell Blackhat Edition Interactive avec fzf
+
+[v4-fzf.sh](https://github.com/trh4ckn0n/trkn-gsmH/raw/refs/heads/main/v4-fzf.sh).
+
+- **Sélection interactive des messages** : Intégration de `fzf` pour permettre à l'utilisateur de choisir rapidement un message à envoyer parmi une liste prédéfinie ou d'entrer un message personnalisé.
+- **Configuration simplifiée de la station de base (BTS)** : Paramètres de la station de base (BTS) comme la bande, la puissance d'émission, le MCC/MNC, et le nom du réseau sont configurés de manière centralisée et peuvent être ajustés.
+- **Fréquence configurable de l'attaque** : La fréquence d'envoi des messages est ajustable par l'utilisateur, permettant un contrôle précis de la vitesse du spam.
+- **Envoi de messages de diffusion (cell broadcast)** : Le script envoie des messages sur des canaux GSM spécifiques, testant ainsi la résistance des appareils mobiles aux faux messages systèmes.
+- **Interface améliorée avec `fzf`** : Grâce à l'outil `fzf`, la sélection des messages et l'entrée des paramètres deviennent plus interactives et fluides pour l'utilisateur.
+- **Sécurité et stabilité** : Vérifications préalables pour s'assurer que le script est exécuté en tant qu'utilisateur root et que le matériel HackRF est correctement détecté avant de procéder.
+
 ---
 
 ## Avertissements
