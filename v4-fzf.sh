@@ -114,9 +114,16 @@ select_message() {
     fi
 }
 
+select_channel() {
+    echo -e "${YELLOW}[+] Sélectionnez un canal...${RESET}"
+    selected_channel=$(seq 50 55 | fzf --prompt="Choisissez un canal : " --height=10)
+    echo -e "${GREEN}[+] Canal sélectionné : $selected_channel${RESET}"
+    return $selected_channel
+}
+
 set_frequency() {
     echo -e "${YELLOW}[+] Définir la fréquence de spam...${RESET}"
-    read -p "Entrez le délai entre les envois en secondes (ex. 10) : " frequency
+    frequency=$(echo -e "5\n10\n20\n30\n60" | fzf --prompt="Choisissez une fréquence : " --height=10)
     if [[ ! "$frequency" =~ ^[0-9]+$ ]]; then
         echo -e "${RED}[!] Fréquence invalide, utilisation de 10 secondes par défaut.${RESET}"
         frequency=10
@@ -127,10 +134,9 @@ blackhat_spam() {
     echo -e "${YELLOW}[+] Démarrage du spam BlackHat...${RESET}"
     while true; do
         for msg in "${MESSAGES[@]}"; do
-            for channel in {50..55}; do
-                send_cell_broadcast "$msg" "$channel"
-                sleep 1
-            done
+            selected_channel=$(select_channel)
+            send_cell_broadcast "$msg" "$selected_channel"
+            sleep 1
             sleep $frequency
         done
     done
