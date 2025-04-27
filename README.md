@@ -6,6 +6,12 @@ Projet offensif d'expérimentation en cybersécurité utilisant un **HackRF** po
 
 ---
 
+### 📚 Matériel nécessaire
+
+Pour plus de détails sur le matériel requis pour ce projet, consultez la [page des matériels nécessaires](https://github.com/trh4ckn0n/trkn-gsmH/blob/main/matos.md).
+
+---
+
 ## Fonctionnalités
 
 - **Broadcast Blackhat** : spam automatique de messages d'alertes diverses (COVID, MAJ SIM, urgence nationale, etc.).
